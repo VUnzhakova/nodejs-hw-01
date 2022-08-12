@@ -5,10 +5,10 @@ const { v4 } = require("uuid");
 const contactsPath = path.resolve(__dirname, "./db/contacts.json");
 
 async function listContacts() {
-  const data = await fs.readFile(contactsPath);
-  const contacts = JSON.parse(data);
-  return contacts;
   try {
+    const data = await fs.readFile(contactsPath);
+    const contacts = JSON.parse(data);
+    return contacts;
   } catch (error) {
     console.log(error.message);
   }
